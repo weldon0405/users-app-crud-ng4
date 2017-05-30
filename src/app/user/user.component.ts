@@ -8,17 +8,21 @@ import { UserService } from './user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  users: Array<User> = [];
+  users: Array<User> = [
+    new User(1, 'First', 'Last', 'email@email.com'),
+    new User(2, 'First', 'Last', 'email@email.com'),
+    new User(3, 'First', 'Last', 'email@email.com'),
+  ];
 
   constructor(private _userService: UserService) { }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
   }
 
   getUsers() {
-    this._userService.getUsers()
-    .then(users => this.users = users)
+    // this._userService.getUsers()
+    // .then(users => this.users = users)
   }
 
 }
