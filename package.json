@@ -1,0 +1,22 @@
+{
+  "name": "users-app",
+  "version": "0.1.1",
+  "description": "This is a CRUD application built with the MEAN stack using Angular 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weldon0405/users-app-crud-ng4.git"
+  },
+  "author": "malbwa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weldon0405/users-app-crud-ng4/issues"
+  },
+  "homepage": "https://github.com/weldon0405/users-app-crud-ng4#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
