@@ -5,7 +5,12 @@ let app = express();
 // Mongo Database
 let mongoose = require("mongoose");
 mongoose.connect('mongodb://localhost/userSchema')
-
+let userSchema = new mongoose.Schema({
+  first_name: { type: String, require: true },
+  last_name: { type: String, require: true },
+  email: { type: String, require: true },
+  editable: { type: Boolean, require: true }
+});
 
 const path = require("path");
 
