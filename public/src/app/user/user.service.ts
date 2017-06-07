@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from 'app/user/user';
+import { User } from './user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -16,6 +16,8 @@ export class UserService {
   }
 
   destroy(user: User){
+    console.log(user);
+    console.log(user._id);
     return this._http.delete('/users/' + user._id)
     .map(data => data.json()).toPromise()
   }
