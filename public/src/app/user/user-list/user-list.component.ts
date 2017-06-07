@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from 'app/user/user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-list',
@@ -20,8 +20,8 @@ export class UserListComponent implements OnInit {
     this.destroyUserEvent.emit(user);
   }
 
-  update(users) {
-    this.updateUserEvent.emit(users);
+  update(user: User) {
+    this.updateUserEvent.emit(user);
   }
 
 }

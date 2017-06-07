@@ -49,15 +49,20 @@ app.post("/users", (req, res, next) => {
 // Destroy User
 app.delete("/users/:id", (req, res, next) => {
   console.log("Server > DELETE '/users/:id' > id ", req.params.id);
-  User.deleteOne({_id:req.params.id}, (err, data) => {
+  User.deleteOne({_id:req.params.id}, (err, rawData) => {
     if (err) return res.json(err)
     else return res.json(true)
   })
 })
 
-// app.get("/users", (req, res, next) => {
-//   res.json([]);
-// })
+app.put("/users/:id", (req, res, next) => {
+  console.log("Server > PUT '/users/:id' > id ", req.params.id);
+  console.log("Server > PUT '/users/:id' > user ", req.body);
+  User.update({_id:req.params.id}, req.body, (err, rawData) => {
+    if (err) return res.json(err)
+    else return res.json(true)
+  })
+})
 
 
 app.all("*", (req, res, next) => {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { User } from 'app/user/user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-edit',
@@ -20,7 +20,7 @@ export class UserEditComponent implements OnInit {
 
   update() {
     this.userEdit.editable = false;
-    this.updateUserEvent.emit({original: this.user, edited: this.userEdit});
+    this.updateUserEvent.emit(this.userEdit);
   }
 
 }
